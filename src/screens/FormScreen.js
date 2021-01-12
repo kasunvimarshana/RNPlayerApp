@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import {Container} from 'native-base';
 
-const FormScreen = (props) => {
+const FormScreen = () => {
    return (
-      <View>
-         <Text onPress = {props.updateState}>
-            {props.myState}
-         </Text>
-      </View>
+      <Container>
+      </Container>
    )
 }
 export default FormScreen;

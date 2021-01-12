@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import {Container} from 'native-base';
+import Video from 'react-native-video';
 
-const PlayerScreen = ({route}) => {
+const PlayerScreen = ({navigation, route}) => {
+   const {external, videoURL} = route.params;
    return (
-      <View>
-         <Text onPress = {props.updateState}>
-            {props.myState}
-         </Text>
-      </View>
+      <Container>
+         <Video
+            controls
+            paused
+            muted
+            source={external ? {uri: videoURL} : videoURL}
+            style={{flex: 1}}
+         />
+      </Container>
    )
 }
 export default PlayerScreen;
